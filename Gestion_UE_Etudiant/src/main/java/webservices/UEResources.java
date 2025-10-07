@@ -10,7 +10,8 @@ import javax.ws.rs.core.Response;
 @Path("/ue")
 public class UEResources {
 
-    UniteEnseignementBusiness helper = new UniteEnseignementBusiness();
+    static UniteEnseignementBusiness helper = new UniteEnseignementBusiness();
+
 
     @Path("/liste")
     @GET
@@ -29,7 +30,7 @@ public class UEResources {
         if (helper.addUniteEnseignement(ue)) {
             return Response.status(201).entity("Added successfully").build();
         } else {
-            return Response.status(409).entity("Already exists").build();
+            return Response.status(208).entity("Already exists").build();
         }
     }
 
@@ -41,7 +42,18 @@ public class UEResources {
         if (helper.deleteUniteEnseignement(code)) {
             return Response.status(200).entity("Deleted successfully").build();
         } else {
-            return Response.status(404).entity("Unite not found").build();
+            return Response.status(404).entity("not found").build();
         }
+    }
+
+@Path("/search")
+@GET
+@Produces(MediaType.APPLICATION_JSON)
+    public Response search(@QueryParam(value = "semestre") int semestre) {
+        return Response
+                .status(200)
+                .entity(this.helper.getUEBySemestre(semestre))
+                .build();
+
     }
 }
