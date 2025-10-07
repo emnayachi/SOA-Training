@@ -78,7 +78,7 @@ public class UniteEnseignementBusiness {
         }
     }
 
-    public List<UniteEnseignement> getListeUE() {
+    public java.lang.Object getListeUE() {
         return unitesEnseignement;
     }
 
