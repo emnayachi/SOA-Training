@@ -1,0 +1,69 @@
+type UniteEnseignement {
+    code: Int
+    domaine: String
+    responsable: String
+    credits: Int
+    semestre: Int
+}
+
+type Module {
+    matricule: String
+    libelle: String
+    coefficient: Int
+    volumeHoraire: Int
+    type: TypeModule
+    uniteEnseignement: UniteEnseignement
+}
+
+enum TypeModule {
+    PROFESSIONNEL
+    TRANSVERSAL
+}
+
+
+type QueryResolver {
+    allUEs: [UniteEnseignement]
+
+    # === Add these new queries ===
+    allModules: [Module]
+    moduleByMatricule(matricule: String!): Module
+    modulesByType(type: TypeModule!): [Module]
+    modulesByUE(codeUE: Int!): [Module]
+}
+
+
+type MutationResolver {
+    addUniteEnseignement(
+        code: Int!
+        domaine: String!
+        responsable: String!
+        credits: Int!
+        semestre: Int!
+    ): Boolean
+
+    # === zidt houniii ===
+    addModule(
+        matricule: String!
+        libelle: String!
+        coefficient: Int!
+        volumeHoraire: Int!
+        type: TypeModule!
+        uniteCode: Int!   
+    ): Boolean
+
+    updateModule(
+        matricule: String!
+        libelle: String!
+        coefficient: Int!
+        volumeHoraire: Int!
+        type: TypeModule!
+        uniteCode: Int!
+    ): Boolean
+
+    deleteModule(matricule: String!): Boolean
+}
+
+schema {
+    query: QueryResolver
+    mutation: MutationResolver
+}

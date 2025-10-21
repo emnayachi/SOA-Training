@@ -1,4 +1,4 @@
-# GraphQL Workshop — Service-Oriented Architecture (SOA)
+# 🧠 GraphQL Workshop — Service-Oriented Architecture (SOA)
 
 
 ---
@@ -88,7 +88,7 @@ You are required to:
  ┃ ┃ ┣ 📂 java
  ┃ ┃ ┃ ┣ 📂 com.esprit.graphql
  ┃ ┃ ┃ ┃ ┣ 📂 entity
- ┃ ┃ ┃ ┃ ┣ 📂 business
+ ┃ ┃ ┃ ┃ ┣ 📂 repository
  ┃ ┃ ┃ ┃ ┣ 📂 graphql
  ┃ ┃ ┃ ┃ ┣ 📜 GraphQLEndPoint.java
  ┃ ┃ ┣ 📂 resources
@@ -142,9 +142,20 @@ mutation {
 - Combining multiple queries in a single GraphQL request.
 
 ---
+
+## 🧾 Deliverables
+
+- Complete project folder (source code + schema + tests).  
+- Summary report (PDF) including:  
+  - Entity and schema descriptions.  
+  - Example queries and mutations.  
+  - Postman test screenshots.  
+  - Observations about GraphQL flexibility.
+
 ---
-### 👨‍🏫 Instructor
-- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
 
-🏫 This training is delivered as part of the **Client-Side Application 1** module at [Esprit School of Engineering](https://www.esprit.tn)
+## 👩‍🏫 Supervision
 
+- **Module Coordinator:** Maroua Douiri  
+- **Workshop Instructors:** Badiaa Bouhdid, Akrem Khémiri, Sarra Abidi, Donia Riahi  
+- **Duration:** 6 hours (Hands-on Workshop)
